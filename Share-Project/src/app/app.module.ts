@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ShareLoginComponent } from './share-login/share-login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShareLoginComponent
   ],
   imports: [
     BrowserModule
