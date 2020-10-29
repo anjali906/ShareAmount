@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-share-login',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./share-login.component.css']
 })
 export class ShareLoginComponent implements OnInit {
+  @Input() title : string;
 
   constructor() { }
 
