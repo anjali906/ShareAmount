@@ -7,10 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ShareLoginComponent implements OnInit {
   @Input() title : string;
+  email:string;
+  password: string;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    console.log("success");
   }
 
 }
