@@ -16,7 +16,7 @@ export class ShareLoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log("success");
+    console.log("success", this.email, this.password);
   }
 
 }
