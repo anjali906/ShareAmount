@@ -1,0 +1,23 @@
+<div >
+    <nav>
+    <a class="navbar-brand" href="">Share-Amount</a>
+    <li>Home</li>
+    <li>About</li>
+    <li *ngIf="!userloggedIn">LogOut</li>
+</nav>
+<p>Distributing money on the basis of number of people went for partyyyy and clubbinggg.</p>
+<div>
+    <label for="count">Person Count</label>
+    <input (input)="onEnterPersonCount($event.target.value)" id="count" />
+</div>
+<div>
+    <label for="total">Total Amount</label>
+    <input (input)="onEnterAmount($event.target.value)" id="total" />
+</div>
+<div>
+    <button [disabled]="!(amountTotal && personCount)" (click)="onSubmit()">Let's Check</button>
+</div>
+<div>
+    <p> Each person should contribute {{ eachPerson | currency : 'INR'}}</p>
+</div>
+</div>

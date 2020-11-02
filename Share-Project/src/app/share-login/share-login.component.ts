@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-share-login',
@@ -6,17 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./share-login.component.css']
 })
 export class ShareLoginComponent implements OnInit {
-  @Input() title : string;
+  userLogedIn: boolean = false;
   email:string;
   password: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
+    this.userLogedIn = true;
     console.log("success", this.email, this.password);
+    this.router.navigateByUrl('main');
   }
 
 }

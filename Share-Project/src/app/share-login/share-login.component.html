@@ -24,5 +24,10 @@
         <div>
             <button [disabled]="emailControl.invalid || passwordControl.invalid">Submit</button>
         </div>
+        <div>
+            <p>Not having a account?</p>
+            <button type="button" [routerLink]="['/registeration']">Sign Up</button>
+        </div>
     </form>
 </div>
+<!-- <app-main [userloggedIn]="userLogedIn"></app-main> -->
