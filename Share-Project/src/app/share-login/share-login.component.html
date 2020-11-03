@@ -1,33 +1,42 @@
-<div class="container">
-    <form (ngSubmit)="onSubmit()" #loginForm=ngForm>
-        <div class="input">
-            <label>Email</label>
-            <input type="email" name="email" [(ngModel)]="email" pattern=".+@.+\..+" #emailControl=ngModel required />
-            <ng-container *ngIf="emailControl.invalid && emailControl.touched">
-                <div *ngIf="emailControl.errors.required">
-                    Please enter email
+
+    <div class="row">
+        <div class="col-6">
+            <img src='assets/share.jpg'>
+        </div>
+        <div class ="col-6">
+            <form (ngSubmit)="onSubmit()" #loginForm=ngForm>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" id="email" type="email" name="email" [(ngModel)]="email" pattern=".+@.+\..+" #emailControl=ngModel required />
+                    <ng-container *ngIf="emailControl.invalid && emailControl.touched">
+                        <div *ngIf="emailControl.errors.required">
+                            Please enter email
+                        </div>
+                        <div *ngIf="emailControl.errors.pattern">
+                            Please enter email in correct format
+                        </div>
+                    </ng-container>
                 </div>
-                <div *ngIf="emailControl.errors.pattern">
-                    Please enter email in correct format
+                <div class="form-group">
+                    <label for="pwd">Password</label>
+                    <input class="form-control" id="pwd" type="password" name="password" [(ngModel)]="password" required #passwordControl=ngModel />
+                    <ng-container *ngIf="passwordControl.invalid && passwordControl.touched">
+                        <div *ngIf="passwordControl.errors.required">
+                            Please enter password
+                        </div>
+                    </ng-container>
                 </div>
-            </ng-container>
-        </div>
-        <div class="password">
-            <label>Password</label>
-            <input type="password" name="password" [(ngModel)]="password" required #passwordControl=ngModel />
-            <ng-container *ngIf="passwordControl.invalid && passwordControl.touched">
-                <div *ngIf="passwordControl.errors.required">
-                    Please enter password
+                <div class="form-group">
+                    <button class="btn btn-outline-success" type="button" class="form-control" [disabled]="emailControl.invalid || passwordControl.invalid">Submit</button>
                 </div>
-            </ng-container>
+                <div class="form-group">
+                    <p>Not having a account?</p>
+                    <button class="btn btn-outline-success" type="button" class="form-control" [routerLink]="['/registeration']">Sign Up</button>
+                </div>
+            </form>
         </div>
-        <div>
-            <button [disabled]="emailControl.invalid || passwordControl.invalid">Submit</button>
-        </div>
-        <div>
-            <p>Not having a account?</p>
-            <button type="button" [routerLink]="['/registeration']">Sign Up</button>
-        </div>
-    </form>
-</div>
+    </div>
+    
+   
+
 <!-- <app-main [userloggedIn]="userLogedIn"></app-main> -->

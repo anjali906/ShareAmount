@@ -6,16 +6,16 @@
     <li *ngIf="!userloggedIn">LogOut</li>
 </nav>
 <p>Distributing money on the basis of number of people went for partyyyy and clubbinggg.</p>
-<div>
+<div class="form-group">
     <label for="count">Person Count</label>
-    <input (input)="onEnterPersonCount($event.target.value)" id="count" />
+    <input (input)="onEnterPersonCount($event.target.value)" id="count" class="form-control" />
 </div>
-<div>
+<div class="form-group">
     <label for="total">Total Amount</label>
-    <input (input)="onEnterAmount($event.target.value)" id="total" />
+    <input (input)="onEnterAmount($event.target.value)" id="total" class="form-control"/>
 </div>
-<div>
-    <button [disabled]="!(amountTotal && personCount)" (click)="onSubmit()">Let's Check</button>
+<div class="form-group">
+    <button [disabled]="!(amountTotal && personCount)" (click)="onSubmit()" class="form-control">Let's Check</button>
 </div>
 <div>
     <p> Each person should contribute {{ eachPerson | currency : 'INR'}}</p>
