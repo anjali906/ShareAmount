@@ -1,4 +1,36 @@
 <h1>Registeration Form</h1>
 <form [formGroup]=newUserForm>
-
+    <div>
+        <label for="firstName">First Name</label>
+        <input formControlName="firstName"/>
+    </div>
+        <ng-container *ngIf="newUserForm.controls.firstName.touched && newUserForm.controls.firstName.invalid">
+            <span>Please enter a value</span>
+        </ng-container>
+    <div>
+        <label for="lastName">First Name</label>
+        <input formControlName="lastName"/>
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input formControlName="email"/>
+    </div>
+    <div>
+        <label for="pwd">Password</label>
+        <input formControlName="password"/>
+    </div>
+    <div>
+        <label for="city">City</label>
+        <input formControlName="city"/>
+    </div>
+    <div>
+        <label for="phone">Phone Number</label>
+        <input formControlName="phoneNumber"/>
+    </div>
 </form>
+
+<hr>
+<div>
+    form is valid: {{newUserForm.valid|json}}
+    form value: {{ newUserForm.value | json}}
+</div>

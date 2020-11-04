@@ -13,7 +13,11 @@ export class RegisterationComponent implements OnInit {
    email: new FormControl('', Validators.required),
    password: new FormControl('', Validators.required),
    city: new FormControl('', Validators.required),
-   phoneNumber: new FormControl('', Validators.required)
+   phoneNumber: new FormControl('',
+    [Validators.required,
+     Validators.maxLength(10),
+     Validators.minLength(10),
+    ])
  });
   constructor() { }
 
