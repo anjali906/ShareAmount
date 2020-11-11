@@ -6,13 +6,20 @@ import { Component, OnInit, Input, Pipe} from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  displayUser = false;
  @Input() userloggedIn;
  personCount = 0;
  amountTotal = 0;
  eachPerson = 0;
+ user = Array[this.personCount];
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  onAddUser(){
+    this.displayUser = true;
   }
   onEnterPersonCount(value: string){
     let number = parseInt(value);

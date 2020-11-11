@@ -14,6 +14,7 @@
         </ul>
     </nav>
 <p>Distributing money on the basis of number of people went for partyyyy and clubbinggg.</p>
+<div class= form>
 <div class="form-group">
     <label for="count">Person Count</label>
     <input (input)="onEnterPersonCount($event.target.value)" id="count" class="form-control" />
@@ -27,5 +28,16 @@
 </div>
 <div>
     <p> Each person should contribute {{ eachPerson | currency : 'INR'}}</p>
+</div>
+</div>
+
+<div>
+    <button type="button" (click)="onAddUser()">Add User</button>
+    <div *ngIf="displayUser"> 
+        <label for="name">Name</label>
+        <input id="name"/>
+        <label for="contribute">Contribution</label>
+        <input id="contribute"/>
+    </div>
 </div>
 </div>

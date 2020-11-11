@@ -1,6 +1,14 @@
-li{
+.form{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-#log{
-    align-self: left;
+
+.form-group{
+    
+    width: 40%;
+}
+p{
+    text-align: center;
 }
