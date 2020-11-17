@@ -33,7 +33,7 @@
 
 <div>
     <button type="button" (click)="onAddUser()">Add User</button>
-    <div *ngIf="displayUser"> 
+    <div *appTimes="user"> 
         <label for="name">Name</label>
         <input id="name"/>
         <label for="contribute">Contribution</label>

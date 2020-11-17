@@ -11,7 +11,7 @@ export class MainComponent implements OnInit {
  personCount = 0;
  amountTotal = 0;
  eachPerson = 0;
- user = Array[this.personCount];
+ user = 0;
   constructor() { }
 
   ngOnInit(): void {
@@ -25,6 +25,7 @@ export class MainComponent implements OnInit {
     let number = parseInt(value);
     if(!(isNaN(number)))
     this.personCount = number;
+    this.user = number;
   }
   onEnterAmount(value:string){
     let amount = parseInt(value);

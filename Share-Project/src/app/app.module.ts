@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { ShareLoginComponent } from './share-login/share-login.component';
 import { RegisterationComponent } from './registeration/registeration.component';
 import { MainComponent } from './main/main.component';
-import { NotFoundComponent } from './not-found/not-found.component'
+import { NotFoundComponent } from './not-found/not-found.component';
+import { TimesDirective } from './times.directive'
 
 const routes: Routes = [
   { path: '', component: ShareLoginComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
     AppComponent,
     ShareLoginComponent,
     RegisterationComponent,
-    MainComponent
+    MainComponent,
+    TimesDirective
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), ReactiveFormsModule
