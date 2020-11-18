@@ -12,12 +12,17 @@ export class MainComponent implements OnInit {
  amountTotal = 0;
  eachPerson = 0;
  user = 0;
+ collection = [];
   constructor() { }
 
   ngOnInit(): void {
 
   }
-
+  pushData(name: string, contribute: number){
+     this.collection.push({name, contribute});
+    console.log('pushed this change', name, contribute);
+    console.log(this.collection);
+  }
   onAddUser(){
     this.displayUser = true;
   }

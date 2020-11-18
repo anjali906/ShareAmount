@@ -32,12 +32,19 @@
 </div>
 
 <div>
-    <button type="button" (click)="onAddUser()">Add User</button>
-    <div *appTimes="user"> 
-        <label for="name">Name</label>
-        <input id="name"/>
-        <label for="contribute">Contribution</label>
-        <input id="contribute"/>
-    </div>
+    <form class="contri">
+        <div *appTimes="user" class="repe"> 
+            <ng-container class="form-group">
+                <label for="name">Name</label>
+                <input id="name" class="form-control" (input)="name = $event.target.value"/>
+            </ng-container>
+            <ng-container class="form-group">
+                <label for="contribute">Contribution</label>
+                <input id="contribute" class="form-control" (input)="contribute = $event.target.value"/>
+            </ng-container>
+            <button class="btn btn-success" (click)="pushData(name, contribute)">push</button>
+        </div>
+    </form>
+   
 </div>
 </div>

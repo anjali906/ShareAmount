@@ -12,3 +12,21 @@
 p{
     text-align: center;
 }
+.contri{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.repe{
+    width: 40%;
+}
+.btn-success{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px  0px;
+    width: 30%;
+}
