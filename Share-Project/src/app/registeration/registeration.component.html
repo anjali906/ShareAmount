@@ -1,36 +1,39 @@
+<div class="container">
 <h1>Registeration Form</h1>
 <form [formGroup]=newUserForm>
-    <div>
+    <div class="form-group">
         <label for="firstName">First Name</label>
-        <input formControlName="firstName"/>
+        <input formControlName="firstName" class="form-control"/>
     </div>
         <ng-container *ngIf="newUserForm.controls.firstName.touched && newUserForm.controls.firstName.invalid">
-            <span>Please enter a value</span>
+            <span class="error">Please enter a value</span>
         </ng-container>
-    <div>
-        <label for="lastName">First Name</label>
-        <input formControlName="lastName"/>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input formControlName="lastName" class="form-control"/>
     </div>
-    <div>
+    <ng-container *ngIf="newUserForm.controls.firstName.touched && newUserForm.controls.firstName.invalid">
+        <span class="error">Please enter a value</span>
+    </ng-container>
+    <div class="form-group">
         <label for="email">Email</label>
-        <input formControlName="email"/>
+        <input formControlName="email" class="form-control"/>
     </div>
-    <div>
+    <div class="form-group">
         <label for="pwd">Password</label>
-        <input formControlName="password"/>
+        <input formControlName="password" class="form-control"/>
     </div>
-    <div>
+    <div class="form-group">
         <label for="city">City</label>
-        <input formControlName="city"/>
+        <input formControlName="city" class="form-control"/>
     </div>
-    <div>
+    <div class="form-group">
         <label for="phone">Phone Number</label>
-        <input formControlName="phoneNumber"/>
+        <input formControlName="phoneNumber" class="form-control"/>
     </div>
 </form>
-
-<hr>
-<div>
-    form is valid: {{newUserForm.valid|json}}
-    form value: {{ newUserForm.value | json}}
+<div class="form-group">
+    <button type="button" class="form-control btn btn-dark">SUBMIT</button>
 </div>
+</div>
+

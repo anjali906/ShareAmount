@@ -1,0 +1,16 @@
+.container{
+    width: 35%;
+    }
+h1{
+    font-size: 30px;
+    margin: 30px;
+    text-align: center;
+    font-weight: 400;
+}
+label{
+    text-transform: uppercase;
+}
+.error{
+    color: red;
+    font-weight: 400;
+}
