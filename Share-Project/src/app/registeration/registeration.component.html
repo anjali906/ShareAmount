@@ -12,7 +12,7 @@
         <label for="lastName">Last Name</label>
         <input formControlName="lastName" class="form-control"/>
     </div>
-    <ng-container *ngIf="newUserForm.controls.firstName.touched && newUserForm.controls.firstName.invalid">
+    <ng-container *ngIf="newUserForm.controls.lastName.touched && newUserForm.controls.lastName.invalid">
         <span class="error">Please enter a value</span>
     </ng-container>
     <div class="form-group">
@@ -31,6 +31,9 @@
         <label for="phone">Phone Number</label>
         <input formControlName="phoneNumber" class="form-control"/>
     </div>
+    <ng-container *ngIf="newUserForm.controls.phoneNumber.touched && newUserForm.controls.phoneNumber.invalid">
+        <span class="error">Please a valid value</span>
+    </ng-container>
 </form>
 <div class="form-group">
     <button type="button" class="form-control btn btn-dark">SUBMIT</button>
