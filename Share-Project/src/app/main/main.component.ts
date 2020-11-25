@@ -13,6 +13,7 @@ export class MainComponent implements OnInit {
  eachPerson = 0;
  user = 0;
  collection = [];
+ compare = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -21,7 +22,8 @@ export class MainComponent implements OnInit {
   pushData(name: string, contribute: number){
      this.collection.push({name, contribute});
     console.log('pushed this change', name, contribute);
-    console.log(this.collection);
+    this.eachPersonShare(this.collection);
+    
   }
   onAddUser(){
     this.displayUser = true;
@@ -39,5 +41,17 @@ export class MainComponent implements OnInit {
   }
   onSubmit(){
     this.eachPerson = Math.floor(this.amountTotal/this.personCount);
+  }
+
+  eachPersonShare(data){
+    this.compare = data;
+    console.log(this.compare);
+   for(let i=0;i< this.personCount;i++){
+     if(this.compare[i].contribute < this.eachPerson){
+       console.log(this.eachPerson - this.compare[i].contribute);
+     }else{
+       console.log('nothing to be paid');
+     }
+   }
   }
 }

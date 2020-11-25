@@ -27,12 +27,15 @@
         <label for="city">City</label>
         <input formControlName="city" class="form-control"/>
     </div>
+    <ng-container *ngIf="newUserForm.controls.city.touched && newUserForm.controls.city.invalid">
+        <span class="error" *ngIf="newUserForm.get('city').errors.pattern">Enter City Name</span>
+    </ng-container>
     <div class="form-group">
         <label for="phone">Phone Number</label>
         <input formControlName="phoneNumber" class="form-control"/>
     </div>
     <ng-container *ngIf="newUserForm.controls.phoneNumber.touched && newUserForm.controls.phoneNumber.invalid">
-        <span class="error">Please a valid value</span>
+        <span class="error" *ngIf="newUserForm.get('phoneNumber').errors.pattern">Enter valid number</span>
     </ng-container>
 </form>
 <div class="form-group">
