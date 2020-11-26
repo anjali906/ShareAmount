@@ -13,4 +13,5 @@ label{
 .error{
     color: red;
     font-weight: 400;
+    border: red 1px solid;
 }
