@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Pipe} from '@angular/core';
+import { Component, OnInit, Input, Pipe } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -7,51 +7,55 @@ import { Component, OnInit, Input, Pipe} from '@angular/core';
 })
 export class MainComponent implements OnInit {
   displayUser = false;
- @Input() userloggedIn;
- personCount = 0;
- amountTotal = 0;
- eachPerson = 0;
- user = 0;
- collection = [];
- compare = [];
+  @Input() userloggedIn;
+  personCount = 0;
+  amountTotal = 0;
+  eachPerson = 0;
+  user = 0;
+  collection = [];
+  compare = [];
   constructor() { }
 
   ngOnInit(): void {
 
   }
-  pushData(name: string, contribute: number){
-     this.collection.push({name, contribute});
+  pushData(name: string, contribute: number) {
+    this.collection.push({ name, contribute });
     console.log('pushed this change', name, contribute);
     this.eachPersonShare(this.collection);
-    
+
   }
-  onAddUser(){
+  onAddUser() {
     this.displayUser = true;
   }
-  onEnterPersonCount(value: string){
+  onEnterPersonCount(value: string) {
     let number = parseInt(value);
-    if(!(isNaN(number)))
-    this.personCount = number;
+    if (!(isNaN(number)))
+      this.personCount = number;
     this.user = number;
   }
-  onEnterAmount(value:string){
+  onEnterAmount(value: string) {
     let amount = parseInt(value);
-    if(!(isNaN(amount)))
-    this.amountTotal = amount;
+    if (!(isNaN(amount)))
+      this.amountTotal = amount;
   }
-  onSubmit(){
-    this.eachPerson = Math.floor(this.amountTotal/this.personCount);
+  onSubmit() {
+    this.eachPerson = Math.floor(this.amountTotal / this.personCount);
   }
 
-  eachPersonShare(data){
+  eachPersonShare(data) {
     this.compare = data;
     console.log(this.compare);
-   for(let i=0;i< this.personCount;i++){
-     if(this.compare[i].contribute < this.eachPerson){
-       console.log(this.eachPerson - this.compare[i].contribute);
-     }else{
-       console.log('nothing to be paid');
-     }
-   }
+    for (let i = 0; i < this.personCount; i++) {
+      if (this.compare[i].contribute) {
+        if (this.compare[i].contribute < this.eachPerson) {
+          console.log(this.eachPerson - this.compare[i].contribute);
+        } else {
+          console.log('nothing to be paid');
+        }
+      }
+      return null;
+
+    }
   }
 }
